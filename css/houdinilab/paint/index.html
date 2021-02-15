@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Hello!</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- import the webpage's stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- import the webpage's javascript file -->
+    <!-- <script src="index.js" defer></script> -->
+</head>
+
+<body>
+    <h2>Material Button</h2>
+    <button class="mdc-button">Button</button>
+    <button class="mdc-button mdc-button--outlined">Button</button>
+    <button class="mdc-button mdc-button--unelevated">Button</button>
+    <button class="mdc-button mdc-button--raised">Button</button>
+
+    <h2>Angled Button Adjusted</h2>
+    <button class="angled no-fill mdc-button">Button</button>
+    <button class="angled outline mdc-button mdc-button--outlined">Button</button>
+    <button class="angled fill-flat mdc-button mdc-button--unelevated">Button</button>
+    <div class="shadow-container">
+        <button class="angled fill-raised mdc-button mdc-button--raised">Button</button>
+    </div>
+
+    <!-- Register Module -->
+    <script>
+        if ('paintWorklet' in CSS) {
+            CSS.paintWorklet.addModule('./angled-corners.js');
+        } else {
+            console.log('No CSS Houdini Support')
+        }
+    </script>
+
+    <!-- Include MDC Packages -->
+    <!-- <link rel="stylesheet" href="https://unpkg.com/material-components-web@latest/dist/material-components-web.min.css">
+    <script src="https://unpkg.com/material-components-web/dist/material-components-web.min.js"></script> -->
+
+    <!-- MDC Ripple -->
+    <!-- <script>
+        const buttons = document.querySelectorAll('.mdc-button');
+        for (const button of buttons) {
+            mdc.ripple.MDCRipple.attachTo(button);
+        }
+    </script> -->
+</body>
+
+</html>

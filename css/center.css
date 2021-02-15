@@ -1,0 +1,34 @@
+.content-center {
+    display: grid;
+    place-content: center;
+    gap: 1ch;
+}
+
+
+/*2*/
+
+.gentle-flex {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1ch;
+}
+
+
+/*3*/
+
+.autobot {
+    display: flex;
+}
+
+.autobot>* {
+    margin: auto;
+}
+
+
+/*4*/
+
+.fluffy-center {
+    padding: 10ch;
+}

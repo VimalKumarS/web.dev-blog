@@ -1,0 +1,33 @@
+.angled {
+    --corner-radius: 0 10 0 0;
+    --paint-color: #6200ee;
+    --stroke-weight: 0;
+    /* Mask every angled button with fill mode */
+    -webkit-mask: paint(angled-corners, filled);
+    /* Override theming on the button */
+    border-radius: 0 !important;
+}
+
+.outline {
+    --stroke-weight: 1;
+    /* Outline On */
+    border-image: paint(angled-corners, outlined) 0 fill !important;
+}
+
+.shadow-container {
+    display: inline;
+    filter: drop-shadow(0px 3px 3px rgba(0, 0, 0, 0.2));
+    transition-property: filter;
+}
+
+.shadow-container:active,
+.shadow-container:focus {
+    filter: drop-shadow(0px 4px 6px rgba(0, 0, 0, 0.45))
+}
+
+
+/* Etc */
+
+h2 {
+    font-family: 'Roboto', sans-serif;
+}

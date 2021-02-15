@@ -1,0 +1,245 @@
+/* use this if copying/pasting skeleton */
+
+
+/* @media (max-width: 540px) {
+  #sidenav-open > nav {
+    background-color: white;
+  }
+}
+
+#sidenav-button > svg {
+  max-width: 50px;
+
+  & > line {
+    stroke: black;
+    stroke-width: 7px;
+  }
+} */
+
+
+/* these are styles to make it pretty */
+
+
+/* sidenav.css has all the layout, state and functionality */
+
+nav {
+    display: inline-flex;
+    flex-direction: column;
+    padding: 2rem;
+    font-size: 1.25rem;
+    color: rgb(226, 226, 226);
+    color: var(--text)
+}
+
+@media (min-width: 540px) {
+    nav {
+        padding-top: 4.5rem
+    }
+}
+
+@media (max-width: 540px) {
+    [dir="ltr"] nav {
+        border-right: 1px var(--surface1)
+    }
+    [dir="rtl"] nav {
+        border-left: 1px var(--surface1)
+    }
+    nav {
+        background-color: rgb(48, 48, 48);
+        background-color: var(--surface2);
+        box-shadow: 5px 0 40px hsla(0, 0%, 0%, .45);
+        font-size: 1.5rem
+    }
+}
+
+nav>h4 {
+    text-transform: uppercase
+}
+
+nav>h4:not(:first-child) {
+    margin-top: 2rem;
+}
+
+nav a {
+    text-decoration: none;
+    line-height: 1.25;
+}
+
+[dir="ltr"] .hamburger {
+    margin-left: -1rem
+}
+
+[dir="rtl"] .hamburger {
+    margin-right: -1rem
+}
+
+.hamburger {
+    --size: 4rem;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    place-content: center;
+    padding: 1rem;
+    box-sizing: border-box;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    height: var(--size);
+    width: var(--size);
+    outline: none;
+    transition: border-color .25s ease, background-color .25s ease
+}
+
+.hamburger:hover {
+    border-color: hsla(328, 100%, 54%, 0.5);
+    border-color: hsl(var(--brandHSL) / 50%);
+}
+
+.hamburger:focus {
+    border-color: hsla(328, 100%, 54%, 0.12);
+    border-color: hsl(var(--brandHSL) / 12%);
+    background: hsla(328, 100%, 54%, 0.1);
+    background: hsl(var(--brandHSL) / 10%);
+}
+
+.hamburger:hover svg>line {
+    stroke: hsl(328, 100%, 54%);
+    stroke: hsl(var(--brandHSL));
+}
+
+.hamburger:active {
+    background: hsla(328, 100%, 54%, 0.2);
+    background: hsl(var(--brandHSL) / 20%);
+}
+
+.hamburger>svg {
+    width: 100%
+}
+
+.hamburger>svg>line {
+    stroke: rgb(226, 226, 226);
+    stroke: var(--text);
+    stroke-width: 7px;
+    transition: stroke .25s ease;
+}
+
+aside>a {
+    outline-offset: -1px;
+    outline: 1px solid transparent
+}
+
+aside>a:focus {
+    outline-color: hsl(328, 100%, 54%);
+    outline-color: hsl(var(--brandHSL));
+    transition: outline-color .25s ease;
+}
+
+main {
+    padding: .5rem 1.5rem
+}
+
+main>header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 3rem;
+    margin-bottom: 1rem;
+}
+
+article {
+    display: inline-grid;
+    grid-gap: 2ch;
+    gap: 2ch;
+    background: rgb(48, 48, 48);
+    background: var(--surface2);
+    padding: 2ch;
+    border-radius: 1ch;
+    box-shadow: 0 2px 5px hsla(0, 0%, 0%, 0.2)
+}
+
+article>* {
+    margin: 0;
+}
+
+article>p+h1,
+article>p+h2,
+article>p+h3,
+article>p+h4,
+article>p+h5,
+article>p+h6 {
+    margin-top: 2ch;
+}
+
+:root {
+    --surface: rgb(27, 27, 27);
+    --surface2: rgb(48, 48, 48);
+    --text: rgb(226, 226, 226);
+    --text2: rgb(171, 171, 171);
+    --brandHSL: 328 100% 54%
+}
+
+@media (color-index: 70) {
+    :root {
+        --surface: rgb(226, 226, 226);
+        --surface2: rgb(255, 255, 254);
+        --text: rgb(48, 48, 48);
+        --text2: rgb(94, 94, 94)
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    :root {
+        --surface: rgb(226, 226, 226);
+        --surface2: rgb(255, 255, 254);
+        --text: rgb(48, 48, 48);
+        --text2: rgb(94, 94, 94)
+    }
+}
+
+body {
+    min-height: 100vh;
+    font-family: "BLOKK", system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif;
+    margin: 0;
+    padding: 0;
+    background: rgb(27, 27, 27);
+    background: var(--surface);
+    color: rgb(226, 226, 226);
+    color: var(--text);
+}
+
+h1,
+h2,
+h3,
+h4,
+figure {
+    margin: 0;
+    color: rgb(226, 226, 226);
+    color: var(--text);
+}
+
+h2 {
+    font-size: 2.5rem;
+}
+
+h3 {
+    font-size: 1.5rem;
+    max-width: 30ch;
+}
+
+p {
+    line-height: 1.5;
+    color: rgb(171, 171, 171);
+    color: var(--text2);
+    max-width: 50ch;
+}
+
+a {
+    color: hsl(328, 100%, 74%);
+    outline-color: hsl(328, 100%, 54%);
+    outline-color: hsl(var(--brandHSL));
+    outline-offset: 5px
+}
+
+a:hover {
+    color: hsl(328, 100%, 54%);
+    color: hsl(var(--brandHSL));
+}
