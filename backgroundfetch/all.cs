@@ -1,0 +1,200 @@
+
+html {
+  background: #696969; /* nicenicenice */
+  height: 100%;
+}
+
+html, body {
+  margin: 0;
+  font-family: roboto, sans-serif;
+}
+
+body {
+  display: grid;
+  flex-flow: column;
+  min-height: 100%;
+  grid-template-rows: min-content auto;
+}
+
+.limit-width {
+  max-width: 800px;
+  margin: 0 auto;
+  background: #fff;
+  width: 100%;
+}
+
+.header {
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+}
+
+.site-title {
+  position: relative;
+  padding-top: 65.5%;
+  margin: 0;
+  background: #000;
+}
+
+.site-title img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.podcasts {
+  position: relative;
+  background: #fff;
+}
+
+.podcasts::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  height: 30px;
+  background: linear-gradient(to top, #0000007d, transparent);
+  left: 0;
+  right: 0;
+}
+
+.player {
+  background: #eff3f4;
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+}
+
+.player audio {
+  width: 100%;
+  display: block;
+}
+
+.player::before {
+  content: '';
+  position: absolute;
+  bottom: 100%;
+  height: 10px;
+  background: linear-gradient(to top, #0000001c, transparent);
+  left: 0;
+  right: 0;
+}
+
+.podcast {
+  display: grid;
+  grid-template-columns: auto min-content;
+  border-bottom: 1px solid #eaeaea;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.podcast::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #000;
+  opacity: 0;
+  will-change: opacity;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.podcast:hover::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  opacity: 0.1;
+}
+
+.podcast-titles {
+  all: unset;
+  display: block;
+  padding: 16px 20px;
+  overflow: hidden;
+  line-height: 1.5;
+  color: #333;
+  position: relative;
+}
+
+.podcast-title,
+.podcast-subtitle {
+  all: unset;
+  display: block;
+  white-space: nowrap;
+  overflow: hidden; 
+  text-overflow: ellipsis;
+}
+
+.podcast-subtitle {
+  color: #888;
+  font-size: 0.9rem;
+}
+
+.action-button {
+  all: unset;
+  --size: 53px;
+  width: var(--size);
+  height: var(--size);
+  padding-right: 10px;
+  cursor: pointer;
+  position: relative;
+}
+
+@keyframes action-enter {
+  from {
+    transform: rotate(-90deg);
+    opacity: 0;
+    animation-timing-function: ease-out;
+  }
+}
+
+@keyframes action-leave {
+  from {
+    transform: rotate(0deg);
+    opacity: 1;
+    animation-timing-function: ease-out;
+  }
+}
+
+.action-dl,
+.action-abort,
+.action-del,
+.action-error {
+  transform-box: fill-box;
+  transform-origin: 50% 50%;
+  opacity: 0;
+  transform: rotate(90deg);
+}
+
+.action-progress {
+  --progress: 0;
+  opacity: 1;
+  stroke-dasharray: 0 113 500;
+  stroke-dashoffset: calc(var(--progress) * 113);
+  transform-box: fill-box;
+  transform: rotate(90deg) scaleX(-1);
+  transform-origin: 50% 50%;
+  transition: stroke-dashoffset 0.5s ease-out;
+}
+
+.action-on {
+  opacity: 1;
+  transform: none;
+  animation: action-enter 0.2s;
+}
+
+.action-off {
+  animation: action-leave 0.2s;
+}
+
+.no-anim * {
+  animation-duration: 0s !important;
+}
