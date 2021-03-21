@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>accordion</title>
+    <link rel="stylesheet" href="accordion.css" />
+</head>
+
+<body>
+    <!-- Accordion Configuration Options
+  
+  data-allow-toggle
+    Allow for each toggle to both open and close its section. Makes it possible for all sections to be closed. Assumes only one section may be open.
+  
+  data-allow-multiple
+    Allow for multiple accordion sections to be expanded at the same time. Assumes data-allow-toggle otherwise the toggle on open sections would be disabled.
+  __________
+  
+  Ex:
+    <div id="accordionGroup" class="Accordion" data-allow-multiple>
+  
+    <div id="accordionGroup" class="Accordion" data-allow-toggle>
+  -->
+
+    <div class="demo-block">
+        <div id="accordionGroup" class="Accordion" data-allow-toggle>
+
+            <h3>
+                <button type="button" aria-expanded="true" class="Accordion-trigger" aria-controls="sect1" id="accordion1id">
+            <span class="Accordion-title">
+              Personal Info
+              <span class="Accordion-icon"></span>
+            </span>
+
+          </button>
+            </h3>
+            <div id="sect1" role="region" aria-labelledby="accordion1id" class="Accordion-panel">
+                <div>
+                    <fieldset>
+                        <p>
+                            <label for="cufc1">
+                  Name
+                  <span aria-hidden="true">
+                    *
+                  </span>
+                  :
+                </label>
+                            <input type="text" value="" name="Name" id="cufc1" class="required" aria-required="true">
+                        </p>
+                    </fieldset>
+                </div>
+            </div>
+
+            <h3>
+                <button type="button" aria-expanded="false" class="Accordion-trigger" aria-controls="sect2" id="accordion2id">
+            <span class="Accordion-title">
+              Billing Address
+              <span class="Accordion-icon"></span>
+            </span>
+          </button>
+            </h3>
+            <div id="sect2" role="region" aria-labelledby="accordion2id" class="Accordion-panel" hidden="">
+                <div>
+                    <fieldset>
+                        <p>
+                            <label for="b-add1">
+                Address 1:
+              </label>
+                            <input type="text" name="b-add1" id="b-add1">
+                        </p>
+                    </fieldset>
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <script src="accordion.js"></script>
+</body>
+
+</html>
